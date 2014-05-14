@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" ng-app='store'>
+<head>
+  <meta charset="UTF-8">
+  <title>Angular</title>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+</head>
+<body>
+  <script type='text/javascript' src='angular.min.js'></script>
+  <script type='text/javascript' src='app_1.js'></script>
+
+  <div ng-controller='StoreController as store'>
+    <!-- Hide the element if the product is soldOut -->
+    <div ng-repeat="product in store.products" ng-hide='product.soldOut'>
+      <h1> {{product.name}} </h1> 
+      <h2> ${{product.price}} </h2> 
+      <p> {{product.description}} </p> 
+      <!-- Only show the button if canPurchase exists -->
+      <button ng-show='product.canPurchase'>Add to Cart</button>
+    </div>
+  </div>
+
+
+</body>
+</html>
