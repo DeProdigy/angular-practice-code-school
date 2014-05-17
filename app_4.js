@@ -102,4 +102,16 @@
     };
   });
 
+  // custom directive
+  app.directive('productTitle', function(){
+    return {
+      // declaring a new HTML element
+      // A stands for attribute to add to the existing HTML element
+      restrict: 'E',
+      // pulls the HTML partial
+      templateUrl: 'product-title.html'
+    };
+  });
+
 })();
+
